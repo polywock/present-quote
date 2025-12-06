@@ -1,0 +1,85 @@
+
+
+
+:root {
+
+   &.style-normal {
+      --font: "anonymous pro";
+      --bg-color: #e7e0d0;
+      --fg-color: #767dff;
+      --fg-text-color: white;
+      --fg-text-size: 3rem;
+      --fg-padding: 10px 40px;
+      --fg-radius: 5px;
+      --line-height: 1.3;
+   }
+
+   &.style-rabbit {
+      --font: "IBM Plex Mono";
+      --bg-color: #bdbdbd;
+      --fg-color: black;
+      --fg-text-color: white;
+      --fg-text-size: 2.5rem;
+      --fg-padding: 10px 40px;
+      --fg-radius: 0px;
+      --line-height: 1.3;
+   }
+
+   &.style-red {
+      --font: "anonymous pro";
+      --bg-color: black;
+      --fg-color: #ff0000;
+      --fg-text-color: white;
+      --fg-text-size: 3rem;
+      --fg-padding: 10px 40px;
+      --fg-radius: 5px;
+      --line-height: 1.3;
+   }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-color);
+  font-family: var(--font);
+  /* user-select: none; */
+  color: #222;
+  font-size: var(--fg-text-size);
+}
+
+.quote-box {
+  line-height: var(--line-height);
+  white-space: pre;
+  text-align: center;
+  font-weight: 600;
+  background-color: var(--fg-color);
+  padding: var(--fg-padding);
+  max-width: 80%;
+  border-radius: var(--fg-radius);
+  color: var(--fg-text-color);
+
+  &:focus {
+   outline: none;
+  }
+}
+
+/* Reveal animation for inline quote text: animate width from 0 -> measured px */
+.reveal-text {
+  display: inline-block;
+  /* width is controlled via inline style during the animation; no default width here
+     so clearing inline width after transition leaves the element at its natural size. */
+  overflow: hidden;
+  /* preserve newlines but do not wrap lines — only break on explicit \n */
+  white-space: pre;
+  vertical-align: top;
+  transition: width 480ms cubic-bezier(.2,.9,.2,1);
+  box-sizing: content-box;
+}
+
+/* width is set inline by JS to a measured px value */
