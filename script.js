@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search)
 const quote = getParam("quote") || "The winds change direction at night."
-const style = getParam("style") || "normal"
+const style = getParam("style") || "red"
 
 // Toggle this to enable/disable the reveal animation
 const ANIMATE = true
